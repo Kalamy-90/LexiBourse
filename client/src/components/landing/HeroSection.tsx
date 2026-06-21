@@ -4,12 +4,13 @@
  * Boutons: Inviter LexiBourse (principal) + Voter sur Top.gg + Nous soutenir (secondaires)
  */
 import { motion } from "framer-motion";
-import { TrendingUp, Star } from "lucide-react";
+import { TrendingUp, Star, MessageCircle } from "lucide-react";
 import { SupportDialog } from "./Header";
 
 const BANNER_URL = "/manus-storage/banniere_lexibourse_dc83c5aa.png";
 const LOGO_URL = "/manus-storage/logo_lexibourse_289dc0ce.png";
 const DISCORD_INVITE = "https://discord.com/oauth2/authorize?client_id=1511660668049162351";
+const DISCORD_SUPPORT = "https://discord.com/invite/wE6vjjCXW3";
 const TOPGG_URL = "https://top.gg/bot/1511660668049162351";
 
 export default function HeroSection() {
@@ -100,13 +101,22 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-        {/* CTA secondaires : Voter Top.gg + Nous soutenir */}
+        {/* CTA secondaires : Serveur Support + Voter Top.gg + Nous soutenir */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
           className="mt-4 flex flex-col items-center gap-3 sm:flex-row"
         >
+          <a
+            href={DISCORD_SUPPORT}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="premium-button-secondary flex items-center gap-2"
+          >
+            <MessageCircle className="h-4 w-4" />
+            Serveur Support
+          </a>
           <a
             href={TOPGG_URL}
             target="_blank"
