@@ -219,15 +219,6 @@ export default function Header() {
               </nav>
               {/* Action buttons */}
               <div className="ml-2 flex items-center gap-2">
-                <a
-                  href={DISCORD_SUPPORT}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-400/10 px-4 py-2 text-sm font-extrabold text-indigo-100 shadow-lg transition-all duration-300 hover:border-indigo-200/55 hover:bg-indigo-400/18 hover:text-white"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Serveur Support
-                </a>
                 <SupportDialog variant="nav" />
               </div>
             </div>

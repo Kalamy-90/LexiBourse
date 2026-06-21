@@ -1,16 +1,16 @@
 /**
  * LexiBourse — Hero Section
  * Dark Finance Premium: bannière pleine largeur, CTA Discord
- * Corrections: lien invite correct, pas de stats, boutons Serveur Support + Nous soutenir
+ * Boutons: Inviter LexiBourse (principal) + Voter sur Top.gg + Nous soutenir (secondaires)
  */
 import { motion } from "framer-motion";
-import { TrendingUp, MessageCircle } from "lucide-react";
+import { TrendingUp, Star } from "lucide-react";
 import { SupportDialog } from "./Header";
 
 const BANNER_URL = "/manus-storage/banniere_lexibourse_dc83c5aa.png";
 const LOGO_URL = "/manus-storage/logo_lexibourse_289dc0ce.png";
 const DISCORD_INVITE = "https://discord.com/oauth2/authorize?client_id=1511660668049162351";
-const DISCORD_SUPPORT = "https://discord.com/invite/wE6vjjCXW3";
+const TOPGG_URL = "https://top.gg/bot/1511660668049162351";
 
 export default function HeroSection() {
   return (
@@ -82,12 +82,12 @@ export default function HeroSection() {
           LexiBourse analyse les conversations de votre serveur Discord et crée un marché boursier dynamique basé sur les mots utilisés. Achetez, vendez, spéculez — et devenez le meilleur investisseur !
         </motion.p>
 
-        {/* CTA Buttons — row 1 */}
+        {/* CTA principal */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
+          className="mt-10"
         >
           <a
             href={DISCORD_INVITE}
@@ -100,7 +100,7 @@ export default function HeroSection() {
           </a>
         </motion.div>
 
-        {/* CTA Buttons — row 2: Serveur Support + Nous soutenir */}
+        {/* CTA secondaires : Voter Top.gg + Nous soutenir */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -108,34 +108,17 @@ export default function HeroSection() {
           className="mt-4 flex flex-col items-center gap-3 sm:flex-row"
         >
           <a
-            href={DISCORD_SUPPORT}
+            href={TOPGG_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="premium-button-secondary flex items-center gap-2"
           >
-            <MessageCircle className="h-4 w-4" />
-            Serveur Support
+            <Star className="h-4 w-4" />
+            Voter sur Top.gg
           </a>
           <SupportDialog variant="hero" />
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Découvrir</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-            className="h-6 w-px bg-gradient-to-b from-amber-200/60 to-transparent"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }
