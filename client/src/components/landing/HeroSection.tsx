@@ -1,19 +1,16 @@
 /**
  * LexiBourse — Hero Section
- * Dark Finance Premium: bannière pleine largeur, stats, CTA Discord
+ * Dark Finance Premium: bannière pleine largeur, CTA Discord
+ * Corrections: lien invite correct, pas de stats, boutons Serveur Support + Nous soutenir
  */
 import { motion } from "framer-motion";
-import { TrendingUp, Server, Users, Star } from "lucide-react";
+import { TrendingUp, MessageCircle } from "lucide-react";
+import { SupportDialog } from "./Header";
+
 const BANNER_URL = "/manus-storage/banniere_lexibourse_dc83c5aa.png";
 const LOGO_URL = "/manus-storage/logo_lexibourse_289dc0ce.png";
-const DISCORD_INVITE = "https://discord.com/invite/wE6vjjCXW3";
-const TOPGG_URL = "https://top.gg/bot/lexibourse";
-
-const stats = [
-  { icon: Server, value: "100+", label: "Serveurs Discord" },
-  { icon: Users, value: "500+", label: "Joueurs actifs" },
-  { icon: Star, value: "5/5", label: "Étoiles sur Top.gg" },
-];
+const DISCORD_INVITE = "https://discord.com/oauth2/authorize?client_id=1511660668049162351";
+const DISCORD_SUPPORT = "https://discord.com/invite/wE6vjjCXW3";
 
 export default function HeroSection() {
   return (
@@ -51,7 +48,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <span className="section-eyebrow">Bot Discord • Finance & Investissement</span>
+          <span className="section-eyebrow">Bot Discord — Finance et Investissement</span>
         </motion.div>
 
         {/* Title */}
@@ -85,7 +82,7 @@ export default function HeroSection() {
           LexiBourse analyse les conversations de votre serveur Discord et crée un marché boursier dynamique basé sur les mots utilisés. Achetez, vendez, spéculez — et devenez le meilleur investisseur !
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons — row 1 */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -101,43 +98,25 @@ export default function HeroSection() {
             <TrendingUp className="h-5 w-5" />
             Inviter LexiBourse
           </a>
+        </motion.div>
+
+        {/* CTA Buttons — row 2: Serveur Support + Nous soutenir */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="mt-4 flex flex-col items-center gap-3 sm:flex-row"
+        >
           <a
-            href={TOPGG_URL}
+            href={DISCORD_SUPPORT}
             target="_blank"
             rel="noopener noreferrer"
             className="premium-button-secondary flex items-center gap-2"
           >
-            <Star className="h-4 w-4" />
-            Voter sur Top.gg
+            <MessageCircle className="h-4 w-4" />
+            Serveur Support
           </a>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mx-auto mt-14 grid w-full max-w-3xl grid-cols-1 gap-3 rounded-[2rem] border border-amber-200/20 bg-white/[0.055] p-3 shadow-2xl backdrop-blur-2xl sm:grid-cols-3"
-        >
-          {stats.map(({ icon: Icon, value, label }) => (
-            <div
-              key={label}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-black/20 px-5 py-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-amber-200/35 hover:bg-white/[0.08] sm:text-center"
-            >
-              <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-amber-200/50 to-transparent opacity-70" />
-              <div className="flex items-center gap-4 sm:flex-col sm:gap-3">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-amber-200/20 bg-amber-300/10 text-amber-200 shadow-lg">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <span>
-                  <span className="font-display flex items-center gap-2 text-3xl font-extrabold tracking-tight text-amber-100 sm:justify-center sm:text-4xl">
-                    {value}
-                  </span>
-                  <span className="mt-1 block text-xs font-bold uppercase tracking-[0.18em] text-slate-300">{label}</span>
-                </span>
-              </div>
-            </div>
-          ))}
+          <SupportDialog variant="hero" />
         </motion.div>
       </div>
 

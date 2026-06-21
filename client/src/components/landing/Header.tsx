@@ -1,18 +1,19 @@
 /**
  * LexiBourse — Header Component
- * Dark Finance Premium: pill nav flottante, backdrop-blur, bouton "Nous soutenir" rose
- * Inspiré de Daily Question LandingHeader
+ * Dark Finance Premium: pill nav flottante, backdrop-blur
+ * Boutons: Inviter LexiBourse + Serveur Support + Nous soutenir
  */
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Menu, X, TrendingUp, BookOpen, Zap, HelpCircle, Info, CreditCard, Coins, Gift } from "lucide-react";
+import { Heart, Menu, X, TrendingUp, MessageCircle, CreditCard, Coins, Gift } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
 const LOGO_URL = "/manus-storage/logo_lexibourse_289dc0ce.png";
-const DISCORD_INVITE = "https://discord.com/invite/wE6vjjCXW3";
-const TOPGG_URL = "https://top.gg/bot/lexibourse";
-const KOFI_URL = "https://ko-fi.com/kalamy";
+const DISCORD_INVITE = "https://discord.com/oauth2/authorize?client_id=1511660668049162351";
+const DISCORD_SUPPORT = "https://discord.com/invite/wE6vjjCXW3";
+const TOPGG_URL = "https://top.gg/bot/1511660668049162351";
+const KOFI_URL = "https://ko-fi.com/kalamysteam";
 
 const navLinks = [
   { href: "#features", text: "Fonctionnalités" },
@@ -23,33 +24,60 @@ const navLinks = [
 ];
 
 const cryptoOptions = [
-  { name: "Bitcoin", network: "BTC", address: "39dmeg5pmHgsKFCEXe6rjr5GHMmUva2V4W" },
-  { name: "Ethereum", network: "ETH", address: "0xac0dfE09C9292a92DB3056a286348887D81282DF" },
-  { name: "Solana", network: "SOL", address: "53RA6mgpcMixBuP9P9gTR9X2m8XtQZZVnw48hYbph2ru" },
-  { name: "Tether", network: "TRON / TRC20", address: "TPobAx1wJxgP7sh737rPfKc6ToSZvb8Vro" },
+  {
+    name: "Bitcoin",
+    network: "BTC",
+    address: "39dmeg5pmHgsKFCEXe6rjr5GHMmUva2V4W",
+    qrCode: "/manus-storage/bitcoin-qr_7357b67a.png",
+  },
+  {
+    name: "Ethereum",
+    network: "ETH",
+    address: "0xac0dfE09C9292a92DB3056a286348887D81282DF",
+    qrCode: "/manus-storage/ethereum-qr_85b08482.png",
+  },
+  {
+    name: "USDC",
+    network: "Ethereum",
+    address: "0xac0dfE09C9292a92DB3056a286348887D81282DF",
+    qrCode: "/manus-storage/usdc-qr_b147dfbd.png",
+  },
+  {
+    name: "Solana",
+    network: "SOL",
+    address: "53RA6mgpcMixBuP9P9gTR9X2m8XtQZZVnw48hYbph2ru",
+    qrCode: "/manus-storage/solana-qr_551f7e6b.png",
+  },
+  {
+    name: "Tether",
+    network: "TRON / TRC20",
+    address: "TPobAx1wJxgP7sh737rPfKc6ToSZvb8Vro",
+    qrCode: "/manus-storage/tether-tron-qr_bb2817c9.png",
+  },
 ];
 
-function SupportDialog({ variant = "nav" }: { variant?: "nav" | "hero" | "mobile" }) {
+export function SupportDialog({ variant = "nav" }: { variant?: "nav" | "hero" | "mobile" }) {
   const [open, setOpen] = useState(false);
   const [showCrypto, setShowCrypto] = useState(false);
 
   const isNav = variant === "nav";
   const isMobile = variant === "mobile";
+  const isHero = variant === "hero";
 
   const triggerClass = isNav
-    ? "rounded-full border border-pink-300/30 bg-pink-400/10 px-4 py-2 text-sm font-extrabold text-pink-100 shadow-lg transition-all duration-300 hover:border-pink-200/55 hover:bg-pink-400/18 hover:text-white"
+    ? "rounded-full border border-pink-300/30 bg-pink-400/10 px-4 py-2 text-sm font-extrabold text-pink-100 shadow-lg transition-all duration-300 hover:border-pink-200/55 hover:bg-pink-400/18 hover:text-white flex items-center gap-2"
     : isMobile
     ? "flex w-full items-center rounded-2xl border border-pink-300/25 bg-pink-400/10 px-4 py-4 text-lg font-semibold text-pink-100 transition-colors duration-300 hover:border-pink-200/45 hover:bg-pink-400/15 hover:text-white"
-    : "rounded-full border border-pink-300/30 bg-gradient-to-r from-pink-500/18 via-fuchsia-500/16 to-purple-500/18 px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-pink-100 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-pink-200/55 hover:text-white";
+    : "rounded-full border border-pink-300/30 bg-gradient-to-r from-pink-500/18 via-fuchsia-500/16 to-purple-500/18 px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-pink-100 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-pink-200/55 hover:text-white flex items-center gap-2";
 
   return (
     <>
-      <button className={triggerClass} onClick={() => setOpen(true)}>
-        <Heart className="mr-2 inline h-4 w-4 fill-pink-300/30 text-pink-200" />
-        Nous soutenir
+      <button className={triggerClass} onClick={() => { setOpen(true); setShowCrypto(false); }}>
+        <Heart className="h-4 w-4 fill-pink-300/30 text-pink-200" />
+        {isMobile ? "Nous soutenir" : "Nous soutenir"}
       </button>
 
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog open={open} onOpenChange={(v) => { setOpen(v); if (!v) setShowCrypto(false); }}>
         <DialogContent className="max-h-[92vh] max-w-2xl overflow-y-auto rounded-[2rem] border border-pink-200/20 bg-[#080914]/95 p-0 text-slate-100 shadow-2xl backdrop-blur-2xl">
           <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-pink-200/60 to-transparent" />
           <div className="relative p-7 sm:p-9">
@@ -113,6 +141,12 @@ function SupportDialog({ variant = "nav" }: { variant?: "nav" | "hero" | "mobile
                     <div key={c.name} className="rounded-2xl border border-white/10 bg-black/20 p-4">
                       <p className="font-display text-lg font-bold text-amber-100">{c.name}</p>
                       <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{c.network}</p>
+                      <img
+                        src={c.qrCode}
+                        alt={`QR code ${c.name}`}
+                        className="mx-auto mb-4 h-36 w-36 rounded-2xl border border-white/10 bg-white object-contain p-2 shadow-lg"
+                        loading="lazy"
+                      />
                       <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-500">Adresse</p>
                       <p className="break-all rounded-xl border border-white/10 bg-black/30 p-3 font-mono text-xs leading-5 text-slate-200">{c.address}</p>
                     </div>
@@ -152,7 +186,7 @@ export default function Header() {
         }`}
       >
         <div className="container mx-auto px-4 py-4 sm:px-6">
-          <div className="mx-auto flex w-full items-center justify-between rounded-full border border-white/10 bg-white/[0.035] px-3 py-2 shadow-2xl backdrop-blur-2xl sm:px-5 md:w-fit md:max-w-[calc(100vw-2rem)] md:justify-center md:gap-5 lg:gap-6">
+          <div className="mx-auto flex w-full items-center justify-between rounded-full border border-white/10 bg-white/[0.035] px-3 py-2 shadow-2xl backdrop-blur-2xl sm:px-5 md:w-fit md:max-w-[calc(100vw-2rem)] md:justify-center md:gap-4 lg:gap-5">
             {/* Logo */}
             <motion.a
               href="#"
@@ -171,19 +205,31 @@ export default function Header() {
             </motion.a>
 
             {/* Desktop Nav */}
-            <div className="hidden items-center md:flex md:gap-2">
+            <div className="hidden items-center md:flex md:gap-1">
               <nav className="flex items-center gap-1">
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
-                    className="rounded-full px-4 py-2 text-sm font-semibold text-slate-300 transition-all duration-300 hover:bg-white/7 hover:text-amber-100"
+                    className="rounded-full px-3 py-2 text-sm font-semibold text-slate-300 transition-all duration-300 hover:bg-white/7 hover:text-amber-100"
                   >
                     {link.text}
                   </a>
                 ))}
-                <SupportDialog variant="nav" />
               </nav>
+              {/* Action buttons */}
+              <div className="ml-2 flex items-center gap-2">
+                <a
+                  href={DISCORD_SUPPORT}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 rounded-full border border-indigo-300/30 bg-indigo-400/10 px-4 py-2 text-sm font-extrabold text-indigo-100 shadow-lg transition-all duration-300 hover:border-indigo-200/55 hover:bg-indigo-400/18 hover:text-white"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Serveur Support
+                </a>
+                <SupportDialog variant="nav" />
+              </div>
             </div>
 
             {/* Mobile burger */}
@@ -240,7 +286,17 @@ export default function Header() {
                     {link.text}
                   </a>
                 ))}
-                <div className="mt-2">
+                <a
+                  href={DISCORD_SUPPORT}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleNavClick}
+                  className="mt-2 flex items-center rounded-2xl border border-indigo-300/25 bg-indigo-400/10 px-4 py-4 text-lg font-semibold text-indigo-100 transition-colors hover:border-indigo-200/45 hover:bg-indigo-400/15 hover:text-white"
+                >
+                  <MessageCircle className="mr-3 h-5 w-5" />
+                  Serveur Support
+                </a>
+                <div className="mt-1">
                   <SupportDialog variant="mobile" />
                 </div>
                 <a

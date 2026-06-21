@@ -1,7 +1,8 @@
 /**
  * LexiBourse — About Section
  * Dark Finance Premium: section À propos inspirée de Daily Question
- * Inclut: La Kalamy's Team + bloc Daily Question + contacts
+ * Layout: La Kalamy's Team (grande carte) | colonne droite (Nous contacter + À propos de Kalamy)
+ * Puis: Daily Question (gauche) | À propos de Kalamy (droite)
  */
 import { motion } from "framer-motion";
 import { Users, MessageCircle, Mail, ExternalLink, Bot, Sparkles, UserPlus, TrendingUp } from "lucide-react";
@@ -20,32 +21,42 @@ function ContactLink({
   href,
   children,
   icon: Icon,
+  accent = "amber",
 }: {
   href: string;
   children: React.ReactNode;
   icon: React.ElementType;
+  accent?: "amber" | "blue";
 }) {
+  const borderColor = accent === "blue" ? "rgba(96,165,250,0.2)" : undefined;
+  const bgColor = accent === "blue" ? "rgba(96,165,250,0.06)" : undefined;
+  const iconClass = accent === "blue"
+    ? "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-400/10 text-blue-300"
+    : "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-amber-200/20 bg-amber-300/10 text-amber-200";
+  const hoverTextClass = accent === "blue" ? "group-hover:text-blue-300" : "group-hover:text-amber-200";
+
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       className="contact-link group"
+      style={accent === "blue" ? { borderColor, background: bgColor } : undefined}
     >
       <span className="inline-flex items-center gap-3">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-amber-200/20 bg-amber-300/10 text-amber-200">
+        <span className={iconClass}>
           <Icon className="h-4 w-4" />
         </span>
-        {children}
+        <span className={accent === "blue" ? "text-blue-200" : ""}>{children}</span>
       </span>
-      <ExternalLink className="h-4 w-4 text-slate-500 transition-colors group-hover:text-amber-200" />
+      <ExternalLink className={`h-4 w-4 text-slate-500 transition-colors ${hoverTextClass}`} />
     </a>
   );
 }
 
 const highlights = [
   { icon: Bot, text: "Bots Discord sur mesure pour chaque serveur" },
-  { icon: Sparkles, text: "LexiBourse & Daily Question comme projets phares" },
+  { icon: Sparkles, text: "LexiBourse et Daily Question, projets phares" },
   { icon: UserPlus, text: "Ouverte aux nouveaux membres motivés" },
 ];
 
@@ -74,11 +85,7 @@ export default function AboutSection() {
 
         <div className="mx-auto grid max-w-6xl items-stretch gap-6 lg:grid-cols-[1.12fr_0.88fr]">
           {/* Main card — La Kalamy's Team */}
-          <motion.article
-            custom={0}
-            variants={itemAnimation}
-            className="premium-card h-full"
-          >
+          <motion.article custom={0} variants={itemAnimation} className="premium-card h-full">
             <div className="relative z-10 flex h-full flex-col p-7 sm:p-9">
               <div className="mb-7 flex items-center gap-4">
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-amber-200/25 bg-amber-300/10 text-amber-200 shadow-xl">
@@ -116,80 +123,68 @@ export default function AboutSection() {
             </div>
           </motion.article>
 
-          {/* Right column */}
-          <div className="grid h-full gap-6">
-            {/* Contact */}
-            <motion.aside custom={1} variants={itemAnimation} className="premium-card">
-              <div className="relative z-10 p-7 sm:p-8">
-                <h3 className="font-display mb-4 text-2xl font-bold text-amber-100">Nous contacter</h3>
-                <p className="mb-6 text-sm leading-7 text-slate-300">
-                  Vous souhaitez commander un bot, poser une question ou rejoindre la communauté ? Contactez la Kalamy's Team via :
-                </p>
-                <div className="grid gap-3">
-                  <ContactLink href="https://discord.com/invite/wE6vjjCXW3" icon={MessageCircle}>
-                    Discord LexiBourse
-                  </ContactLink>
-                  <ContactLink href="mailto:kalamys.team@gmail.com" icon={Mail}>
-                    kalamys.team@gmail.com
-                  </ContactLink>
-                </div>
+          {/* Right column: Nous contacter */}
+          <motion.aside custom={1} variants={itemAnimation} className="premium-card">
+            <div className="relative z-10 p-7 sm:p-8">
+              <h3 className="font-display mb-4 text-2xl font-bold text-amber-100">Nous contacter</h3>
+              <p className="mb-6 text-sm leading-7 text-slate-300">
+                Vous souhaitez commander un bot, poser une question ou rejoindre la communauté ? Contactez la Kalamy's Team via :
+              </p>
+              <div className="grid gap-3">
+                <ContactLink href="https://discord.com/invite/wE6vjjCXW3" icon={MessageCircle}>
+                  Discord LexiBourse
+                </ContactLink>
+                <ContactLink href="mailto:kalamys.team@gmail.com" icon={Mail}>
+                  kalamys.team@gmail.com
+                </ContactLink>
               </div>
-            </motion.aside>
+            </div>
+          </motion.aside>
+        </div>
 
-            {/* À propos de Kalamy */}
-            <motion.aside custom={2} variants={itemAnimation} className="premium-card">
-              <div className="relative z-10 p-7 sm:p-8">
-                <h3 className="font-display mb-4 text-2xl font-bold text-amber-100">À propos de Kalamy</h3>
-                <p className="mb-6 text-sm leading-7 text-slate-300">
-                  Je suis Kalamy (kalamy_yt sur Discord), développeur Discord et créateur de la Kalamy's Team. Je développe principalement des bots Discord personnalisés, et c'est moi qui ai créé LexiBourse, Daily Question, les autres bots et ce site.
-                </p>
-                <div className="grid gap-3">
-                  <ContactLink href="https://discord.com/invite/wE6vjjCXW3" icon={MessageCircle}>
-                    Serveur Discord ou message privé
-                  </ContactLink>
-                  <ContactLink href="mailto:kalamy.pro@gmail.com" icon={Mail}>
-                    kalamy.pro@gmail.com
-                  </ContactLink>
-                  <ContactLink href="https://fr.fiverr.com/s/DBp51wo" icon={ExternalLink}>
-                    Fiverr de Kalamy
-                  </ContactLink>
+        {/* Second row: Daily Question (gauche) + À propos de Kalamy (droite) */}
+        <div className="mx-auto mt-6 grid max-w-6xl gap-6 lg:grid-cols-2">
+          {/* Daily Question */}
+          <motion.aside custom={2} variants={itemAnimation} className="premium-card">
+            <div className="relative z-10 p-7 sm:p-8">
+              <div className="mb-5 flex items-center gap-3">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-400/20 bg-blue-400/10 text-blue-300 shadow-xl">
+                  <Sparkles className="h-6 w-6" />
                 </div>
-                <p className="mt-6 rounded-2xl border border-amber-200/15 bg-amber-300/10 p-4 text-sm font-semibold leading-7 text-amber-100/90">
-                  Que ce soit pour un simple renseignement ou pour créer un bot complet, n'hésitez pas à me contacter.
-                </p>
+                <h3 className="font-display text-2xl font-bold text-blue-200">Daily Question</h3>
               </div>
-            </motion.aside>
+              <p className="mb-6 text-sm leading-7 text-slate-300">
+                <strong className="text-blue-200">Daily Question</strong> est l'autre projet phare de la Kalamy's Team. Ce bot Discord envoie automatiquement une question de culture générale chaque jour sur votre serveur, avec un classement des meilleurs répondants et de nombreuses fonctionnalités avancées.
+              </p>
+              <ContactLink href="https://daily-question.netlify.app/" icon={TrendingUp} accent="blue">
+                Découvrir Daily Question
+              </ContactLink>
+            </div>
+          </motion.aside>
 
-            {/* Bloc Daily Question */}
-            <motion.aside custom={3} variants={itemAnimation} className="premium-card">
-              <div className="relative z-10 p-7 sm:p-8">
-                <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-400/10 text-blue-300">
-                    <Sparkles className="h-5 w-5" />
-                  </div>
-                  <h3 className="font-display text-2xl font-bold text-blue-200">Daily Question</h3>
-                </div>
-                <p className="mb-6 text-sm leading-7 text-slate-300">
-                  <strong className="text-blue-200">Daily Question</strong> est l'autre projet phare de la Kalamy's Team. Ce bot Discord envoie automatiquement une question de culture générale chaque jour sur votre serveur, avec un classement des meilleurs répondants et de nombreuses fonctionnalités avancées.
-                </p>
-                <a
-                  href="https://daily-question.netlify.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-link group"
-                  style={{ borderColor: "rgba(96, 165, 250, 0.2)", background: "rgba(96, 165, 250, 0.06)" }}
-                >
-                  <span className="inline-flex items-center gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-400/10 text-blue-300">
-                      <TrendingUp className="h-4 w-4" />
-                    </span>
-                    <span className="text-blue-200">Découvrir Daily Question</span>
-                  </span>
-                  <ExternalLink className="h-4 w-4 text-slate-500 transition-colors group-hover:text-blue-300" />
-                </a>
+          {/* À propos de Kalamy */}
+          <motion.aside custom={3} variants={itemAnimation} className="premium-card">
+            <div className="relative z-10 p-7 sm:p-8">
+              <h3 className="font-display mb-4 text-2xl font-bold text-amber-100">À propos de Kalamy</h3>
+              <p className="mb-6 text-sm leading-7 text-slate-300">
+                Je suis Kalamy (kalamy_yt sur Discord), développeur Discord et créateur de la Kalamy's Team. Je développe principalement des bots Discord personnalisés, et c'est moi qui ai créé LexiBourse, Daily Question, les autres bots et ce site.
+              </p>
+              <div className="grid gap-3">
+                <ContactLink href="https://discord.com/invite/wE6vjjCXW3" icon={MessageCircle}>
+                  Serveur Discord ou message privé
+                </ContactLink>
+                <ContactLink href="mailto:kalamy.pro@gmail.com" icon={Mail}>
+                  kalamy.pro@gmail.com
+                </ContactLink>
+                <ContactLink href="https://fr.fiverr.com/s/DBp51wo" icon={ExternalLink}>
+                  Fiverr de Kalamy
+                </ContactLink>
               </div>
-            </motion.aside>
-          </div>
+              <p className="mt-5 rounded-2xl border border-amber-200/15 bg-amber-300/10 p-4 text-sm font-semibold leading-7 text-amber-100/90">
+                Que ce soit pour un simple renseignement ou pour créer un bot complet, n'hésitez pas à me contacter.
+              </p>
+            </div>
+          </motion.aside>
         </div>
       </div>
     </motion.section>

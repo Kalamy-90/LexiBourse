@@ -9,7 +9,7 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     q: "Comment fonctionne le système de prix ?",
-    a: "Les prix sont mis à jour toutes les heures. Chaque fois qu'un membre écrit un mot coté dans le chat, son prix augmente. À l'inverse, chaque vente d'actions fait baisser le prix. Un mot non utilisé pendant une heure perd automatiquement 5% de sa valeur.",
+    a: "Le prix d'un mot évolue en temps réel selon les achats et les ventes : chaque achat fait monter le cours, chaque vente le fait baisser. De plus, les prix sont recalculés toutes les heures en fonction de l'utilisation des mots dans le chat. Un mot non utilisé pendant une heure perd automatiquement 5% de sa valeur.",
   },
   {
     q: "Comment sont choisis les mots cotés en bourse ?",
@@ -17,15 +17,15 @@ const faqs = [
   },
   {
     q: "Avec combien d'argent démarre-t-on ?",
-    a: "Chaque joueur commence avec 100 🪙 (crédits). Cet argent peut être utilisé pour acheter des actions sur les mots cotés. Vous pouvez augmenter votre capital en vendant des actions avec profit et en recevant des dividendes hebdomadaires.",
+    a: "Chaque joueur commence avec 100 crédits (symbolisés par un sac d'argent). Cet argent peut être utilisé pour acheter des actions sur les mots cotés. Vous pouvez augmenter votre capital en vendant des actions avec profit et en recevant des dividendes hebdomadaires.",
   },
   {
     q: "Qu'est-ce que les dividendes ?",
-    a: "Chaque samedi, le bot verse des dividendes en DM à tous les actionnaires. Le montant est calculé selon le nombre de fois où votre mot a été utilisé dans le chat durant la semaine (0,05 🪙 par usage, multiplié par le nombre d'actions que vous possédez).",
+    a: "Chaque samedi, le bot verse des dividendes en DM à tous les actionnaires. Le montant est calculé selon le nombre de fois où votre mot a été utilisé dans le chat durant la semaine (0,05 crédit par usage, multiplié par le nombre d'actions que vous possédez).",
   },
   {
-    q: "Puis-je exclure certains salons ?",
-    a: "Oui ! Dans le panneau /configurer, l'option 'Exclure des salons' vous permet de sélectionner jusqu'à 10 salons que le bot ignorera complètement (ni analyse des messages, ni mise à jour des prix).",
+    q: "LexiBourse est-il gratuit ?",
+    a: "Oui, LexiBourse est 100% gratuit ! Toutes les fonctionnalités sont disponibles sans abonnement ni paiement. Si vous souhaitez soutenir le développement du projet, vous pouvez faire un don via le bouton 'Nous soutenir' ou voter gratuitement sur Top.gg.",
   },
   {
     q: "Le bot fonctionne-t-il sur plusieurs serveurs ?",

@@ -22,7 +22,7 @@ const features = [
     bg: "bg-green-400/10 border-green-400/20",
     title: "Marché en Temps Réel",
     description:
-      "Les prix des mots évoluent chaque heure en fonction de leur utilisation dans le chat. Plus un mot est utilisé, plus sa valeur monte !",
+      "Le prix d'un mot change en temps réel selon les achats et les ventes. Il est aussi recalculé chaque heure selon l'utilisation dans le chat. Un mot non utilisé perd 5% par heure.",
   },
   {
     icon: BarChart2,
@@ -36,9 +36,9 @@ const features = [
     icon: Coins,
     color: "text-yellow-400",
     bg: "bg-yellow-400/10 border-yellow-400/20",
-    title: "Achat & Vente d'Actions",
+    title: "Achat et Vente d'Actions",
     description:
-      "Achetez des actions sur vos mots favoris, spéculez sur les tendances et revendez au bon moment pour maximiser vos profits.",
+      "Achetez des actions sur vos mots favoris : chaque achat fait monter le prix, chaque vente le fait baisser. Spéculez sur les tendances et revendez au bon moment pour maximiser vos profits.",
   },
   {
     icon: Trophy,
