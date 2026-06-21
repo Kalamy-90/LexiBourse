@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 import { TrendingUp, Star, MessageCircle } from "lucide-react";
 import { SupportDialog } from "./Header";
 
-const BANNER_URL = "/manus-storage/banniere_lexibourse_dc83c5aa.png";
-const LOGO_URL = "/manus-storage/logo_lexibourse_289dc0ce.png";
+const BANNER_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663275414430/KUzTWJGTkMckbQOL.png";
+const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663275414430/QNPzyrYiThtZLDzG.png";
 const DISCORD_INVITE = "https://discord.com/oauth2/authorize?client_id=1511660668049162351";
 const DISCORD_SUPPORT = "https://discord.com/invite/wE6vjjCXW3";
 const TOPGG_URL = "https://top.gg/bot/1511660668049162351";

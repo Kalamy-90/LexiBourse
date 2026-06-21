@@ -4,7 +4,7 @@
  */
 import { TrendingUp } from "lucide-react";
 
-const LOGO_URL = "/manus-storage/logo_lexibourse_289dc0ce.png";
+const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663275414430/QNPzyrYiThtZLDzG.png";
 const DISCORD_INVITE = "https://discord.com/oauth2/authorize?client_id=1511660668049162351";
 const TOPGG_URL = "https://top.gg/bot/1511660668049162351";
 

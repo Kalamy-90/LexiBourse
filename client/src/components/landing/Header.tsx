@@ -9,7 +9,7 @@ import { Heart, Menu, X, TrendingUp, MessageCircle, CreditCard, Coins, Gift } fr
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
-const LOGO_URL = "/manus-storage/logo_lexibourse_289dc0ce.png";
+const LOGO_URL = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663275414430/QNPzyrYiThtZLDzG.png";
 const DISCORD_INVITE = "https://discord.com/oauth2/authorize?client_id=1511660668049162351";
 const DISCORD_SUPPORT = "https://discord.com/invite/wE6vjjCXW3";
 const TOPGG_URL = "https://top.gg/bot/1511660668049162351";
@@ -28,31 +28,31 @@ const cryptoOptions = [
     name: "Bitcoin",
     network: "BTC",
     address: "39dmeg5pmHgsKFCEXe6rjr5GHMmUva2V4W",
-    qrCode: "/manus-storage/bitcoin-qr_7357b67a.png",
+    qrCode: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663275414430/MGBwkOOJBJhOXBek.png",
   },
   {
     name: "Ethereum",
     network: "ETH",
     address: "0xac0dfE09C9292a92DB3056a286348887D81282DF",
-    qrCode: "/manus-storage/ethereum-qr_85b08482.png",
+    qrCode: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663275414430/kXwVKKSqdzYqtSRR.png",
   },
   {
     name: "USDC",
     network: "Ethereum",
     address: "0xac0dfE09C9292a92DB3056a286348887D81282DF",
-    qrCode: "/manus-storage/usdc-qr_b147dfbd.png",
+    qrCode: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663275414430/tAaEjoKWTBXGzTdG.png",
   },
   {
     name: "Solana",
     network: "SOL",
     address: "53RA6mgpcMixBuP9P9gTR9X2m8XtQZZVnw48hYbph2ru",
-    qrCode: "/manus-storage/solana-qr_551f7e6b.png",
+    qrCode: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663275414430/ABbrfHsjkOweFLVS.png",
   },
   {
     name: "Tether",
     network: "TRON / TRC20",
     address: "TPobAx1wJxgP7sh737rPfKc6ToSZvb8Vro",
-    qrCode: "/manus-storage/tether-tron-qr_bb2817c9.png",
+    qrCode: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663275414430/HOZOEIpHrWAIuSil.png",
   },
 ];
 
