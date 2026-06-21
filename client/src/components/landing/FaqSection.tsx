@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "Avec combien d'argent démarre-t-on ?",
-    a: "Chaque joueur commence avec 100 crédits (symbolisés par un sac d'argent). Cet argent peut être utilisé pour acheter des actions sur les mots cotés. Vous pouvez augmenter votre capital en vendant des actions avec profit et en recevant des dividendes hebdomadaires.",
+    a: "Chaque joueur commence avec 100 💰 crédits. Cet argent peut être utilisé pour acheter des actions sur les mots cotés. Vous pouvez augmenter votre capital en vendant des actions avec profit et en recevant des dividendes hebdomadaires.",
   },
   {
     q: "Qu'est-ce que les dividendes ?",

@@ -36,7 +36,7 @@ const steps = [
     color: "text-yellow-400",
     bg: "bg-yellow-400/10 border-yellow-400/20",
     title: "Investir et Profiter",
-    description: "Chaque membre démarre avec 100 crédits (sac d'argent). Utilisez /bourse pour voir les cours, /acheter pour investir et /portfolio pour suivre vos gains en temps réel !",
+    description: "Chaque membre démarre avec 100 💰 crédits. Utilisez /bourse pour voir les cours, /acheter pour investir et /portfolio pour suivre vos gains en temps réel !",
   },
 ];
 
