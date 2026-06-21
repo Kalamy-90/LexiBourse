@@ -1,5 +1,5 @@
 /**
- * LexiBourse — Commands Section
+ * Lexi Bourse — Commands Section
  * Dark Finance Premium: pills de commandes avec description
  */
 import { motion } from "framer-motion";

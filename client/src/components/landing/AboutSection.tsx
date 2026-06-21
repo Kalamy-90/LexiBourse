@@ -1,5 +1,5 @@
 /**
- * LexiBourse — About Section
+ * Lexi Bourse — About Section
  * Dark Finance Premium: section À propos inspirée de Daily Question
  * Layout: 2 colonnes égales, chaque colonne remplit toute la hauteur sans espace vide
  * Gauche: La Kalamy's Team (haut) + Daily Question (bas)
@@ -58,7 +58,7 @@ function ContactLink({
 
 const highlights = [
   { icon: Bot, text: "Bots Discord sur mesure pour chaque serveur" },
-  { icon: Sparkles, text: "LexiBourse et Daily Question, projets phares" },
+  { icon: Sparkles, text: "Lexi Bourse et Daily Question, projets phares" },
   { icon: UserPlus, text: "Ouverte aux nouveaux membres motivés" },
 ];
 
@@ -106,7 +106,7 @@ export default function AboutSection() {
                     La Kalamy's Team est une équipe de développement spécialisée dans les bots Discord, créée par Kalamy (kalamy_yt sur Discord). Actuellement composée d'un seul membre, la team travaille sur différents projets autour du développement de bots personnalisés.
                   </p>
                   <p>
-                    Parmi les créations de la team, les projets principaux sont <strong className="text-amber-200">LexiBourse</strong> — un bot qui transforme les conversations de votre serveur en marché boursier — et <strong className="text-amber-200">Daily Question</strong>, un bot de questions quotidiennes avec classement.
+                    Parmi les créations de la team, les projets principaux sont <strong className="text-amber-200">Lexi Bourse</strong> — un bot qui transforme les conversations de votre serveur en marché boursier — et <strong className="text-amber-200">Daily Question</strong>, un bot de questions quotidiennes avec classement.
                   </p>
                   <p>
                     La Kalamy's Team peut également réaliser des bots Discord sur commande : automatisation, modération, IA, jeux, tickets, économie, et bien plus.
@@ -161,7 +161,7 @@ export default function AboutSection() {
                 </p>
                 <div className="grid gap-3">
                   <ContactLink href="https://discord.com/invite/wE6vjjCXW3" icon={MessageCircle}>
-                    Discord LexiBourse
+                    Discord Lexi Bourse
                   </ContactLink>
                   <ContactLink href="mailto:kalamys.team@gmail.com" icon={Mail}>
                     kalamys.team@gmail.com
@@ -175,7 +175,7 @@ export default function AboutSection() {
               <div className="relative z-10 p-7 sm:p-8">
                 <h3 className="font-display mb-4 text-2xl font-bold text-amber-100">À propos de Kalamy</h3>
                 <p className="mb-5 text-sm leading-7 text-slate-300">
-                  Je suis Kalamy (kalamy_yt sur Discord), développeur Discord et créateur de la Kalamy's Team. Je développe principalement des bots Discord personnalisés, et c'est moi qui ai créé LexiBourse, Daily Question, les autres bots et ce site.
+                  Je suis Kalamy (kalamy_yt sur Discord), développeur Discord et créateur de la Kalamy's Team. Je développe principalement des bots Discord personnalisés, et c'est moi qui ai créé Lexi Bourse, Daily Question, les autres bots et ce site.
                 </p>
                 <div className="grid gap-3">
                   <ContactLink href="https://discord.com/invite/wE6vjjCXW3" icon={MessageCircle}>

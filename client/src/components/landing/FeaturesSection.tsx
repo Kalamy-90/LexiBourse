@@ -1,5 +1,5 @@
 /**
- * LexiBourse — Features Section
+ * Lexi Bourse — Features Section
  * Dark Finance Premium: grille de cartes premium avec icônes et animations
  */
 import { motion } from "framer-motion";
@@ -100,7 +100,7 @@ export default function FeaturesSection() {
           <span className="section-eyebrow">Fonctionnalités</span>
           <h2 className="section-title">Un marché boursier complet</h2>
           <p className="section-subtitle">
-            LexiBourse transforme votre serveur Discord en une véritable place boursière. Chaque conversation devient une opportunité d'investissement.
+            Lexi Bourse transforme votre serveur Discord en une véritable place boursière. Chaque conversation devient une opportunité d'investissement.
           </p>
         </motion.div>
 

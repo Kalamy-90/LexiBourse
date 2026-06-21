@@ -1,7 +1,7 @@
 /**
- * LexiBourse — Hero Section
+ * Lexi Bourse — Hero Section
  * Dark Finance Premium: bannière pleine largeur, CTA Discord
- * Boutons: Inviter LexiBourse (principal) + Voter sur Top.gg + Nous soutenir (secondaires)
+ * Boutons: Inviter Lexi Bourse (principal) + Voter sur Top.gg + Nous soutenir (secondaires)
  */
 import { motion } from "framer-motion";
 import { TrendingUp, Star, MessageCircle } from "lucide-react";
@@ -20,7 +20,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <img
           src={BANNER_URL}
-          alt="Bannière LexiBourse"
+          alt="Bannière Lexi Bourse"
           className="h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#070812]/70 via-[#070812]/60 to-[#070812]" />
@@ -38,7 +38,7 @@ export default function HeroSection() {
         >
           <img
             src={LOGO_URL}
-            alt="Logo LexiBourse"
+            alt="Logo Lexi Bourse"
             className="mx-auto h-24 w-24 rounded-2xl border-2 border-amber-200/40 bg-slate-950/80 object-cover shadow-2xl shadow-amber-950/40 sm:h-28 sm:w-28"
           />
         </motion.div>
@@ -80,7 +80,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="section-subtitle mt-6 max-w-2xl"
         >
-          LexiBourse analyse les conversations de votre serveur Discord et crée un marché boursier dynamique basé sur les mots utilisés. Achetez, vendez, spéculez — et devenez le meilleur investisseur !
+          Lexi Bourse analyse les conversations de votre serveur Discord et crée un marché boursier dynamique basé sur les mots utilisés. Achetez, vendez, spéculez — et devenez le meilleur investisseur !
         </motion.p>
 
         {/* CTA principal */}
@@ -97,7 +97,7 @@ export default function HeroSection() {
             className="premium-button flex items-center gap-2"
           >
             <TrendingUp className="h-5 w-5" />
-            Inviter LexiBourse
+            Inviter Lexi Bourse
           </a>
         </motion.div>
 

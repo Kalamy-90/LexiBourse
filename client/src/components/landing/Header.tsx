@@ -1,7 +1,7 @@
 /**
- * LexiBourse — Header Component
+ * Lexi Bourse — Header Component
  * Dark Finance Premium: pill nav flottante, backdrop-blur
- * Boutons: Inviter LexiBourse + Serveur Support + Nous soutenir
+ * Boutons: Inviter Lexi Bourse + Serveur Support + Nous soutenir
  */
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -86,10 +86,10 @@ export function SupportDialog({ variant = "nav" }: { variant?: "nav" | "hero" | 
                 <Heart className="h-7 w-7 fill-pink-300/25" />
               </div>
               <DialogTitle className="font-display text-3xl font-bold text-pink-100 sm:text-4xl">
-                Soutenir LexiBourse
+                Soutenir Lexi Bourse
               </DialogTitle>
               <DialogDescription className="mx-auto max-w-xl pt-3 text-base leading-8 text-slate-300">
-                Vous aimez LexiBourse ? Aidez-nous à continuer le développement avec un don, ou gratuitement en votant sur Top.gg. Chaque soutien aide le projet à grandir.
+                Vous aimez Lexi Bourse ? Aidez-nous à continuer le développement avec un don, ou gratuitement en votant sur Top.gg. Chaque soutien aide le projet à grandir.
               </DialogDescription>
             </DialogHeader>
 
@@ -196,11 +196,11 @@ export default function Header() {
             >
               <img
                 src={LOGO_URL}
-                alt="Logo LexiBourse"
+                alt="Logo Lexi Bourse"
                 className="h-10 w-10 rounded-full border border-amber-200/40 bg-slate-950 object-cover shadow-lg"
               />
               <span className="font-display text-xl font-bold tracking-wide text-amber-100">
-                LexiBourse
+                Lexi Bourse
               </span>
             </motion.a>
 
@@ -256,7 +256,7 @@ export default function Header() {
               <div className="mb-8 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <img src={LOGO_URL} alt="Logo" className="h-8 w-8 rounded-full" />
-                  <span className="font-display text-lg font-bold text-amber-100">LexiBourse</span>
+                  <span className="font-display text-lg font-bold text-amber-100">Lexi Bourse</span>
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}

@@ -1,5 +1,5 @@
 /**
- * LexiBourse — FAQ Section
+ * Lexi Bourse — FAQ Section
  * Dark Finance Premium: accordion avec animations
  */
 import { useState } from "react";
@@ -24,8 +24,8 @@ const faqs = [
     a: "Chaque samedi, le bot verse des dividendes en DM à tous les actionnaires. Le montant est calculé selon le nombre de fois où votre mot a été utilisé dans le chat durant la semaine (0,05 crédit par usage, multiplié par le nombre d'actions que vous possédez).",
   },
   {
-    q: "LexiBourse est-il gratuit ?",
-    a: "Oui, LexiBourse est 100% gratuit ! Toutes les fonctionnalités sont disponibles sans abonnement ni paiement. Si vous souhaitez soutenir le développement du projet, vous pouvez faire un don via le bouton 'Nous soutenir' ou voter gratuitement sur Top.gg.",
+    q: "Lexi Bourse est-il gratuit ?",
+    a: "Oui, Lexi Bourse est 100% gratuit ! Toutes les fonctionnalités sont disponibles sans abonnement ni paiement. Si vous souhaitez soutenir le développement du projet, vous pouvez faire un don via le bouton 'Nous soutenir' ou voter gratuitement sur Top.gg.",
   },
   {
     q: "Le bot fonctionne-t-il sur plusieurs serveurs ?",
@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "Comment rejoindre le serveur de support ?",
-    a: "Vous pouvez rejoindre le serveur Discord officiel de support via le lien dans la section 'À propos'. Vous y trouverez de l'aide, les annonces de mises à jour et la communauté LexiBourse.",
+    a: "Vous pouvez rejoindre le serveur Discord officiel de support via le lien dans la section 'À propos'. Vous y trouverez de l'aide, les annonces de mises à jour et la communauté Lexi Bourse.",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function FaqSection() {
           <span className="section-eyebrow">FAQ</span>
           <h2 className="section-title">Questions fréquentes</h2>
           <p className="section-subtitle">
-            Tout ce que vous devez savoir sur LexiBourse et son fonctionnement.
+            Tout ce que vous devez savoir sur Lexi Bourse et son fonctionnement.
           </p>
         </motion.div>
 

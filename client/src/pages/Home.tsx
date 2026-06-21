@@ -1,5 +1,5 @@
 /**
- * LexiBourse — Home Page
+ * Lexi Bourse — Home Page
  * Dark Finance Premium: assemblage de toutes les sections
  */
 import Header from "@/components/landing/Header";

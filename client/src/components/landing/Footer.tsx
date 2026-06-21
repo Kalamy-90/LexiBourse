@@ -1,5 +1,5 @@
 /**
- * LexiBourse — Footer
+ * Lexi Bourse — Footer
  * Dark Finance Premium: footer avec liens et copyright
  */
 import { TrendingUp } from "lucide-react";
@@ -29,10 +29,10 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <img
               src={LOGO_URL}
-              alt="Logo LexiBourse"
+              alt="Logo Lexi Bourse"
               className="h-10 w-10 rounded-full border border-amber-200/40 bg-slate-950 object-cover shadow-lg"
             />
-            <span className="font-display text-xl font-bold text-amber-100">LexiBourse</span>
+            <span className="font-display text-xl font-bold text-amber-100">Lexi Bourse</span>
           </div>
 
           {/* Nav links */}
@@ -58,7 +58,7 @@ export default function Footer() {
             className="flex items-center gap-2 rounded-full border border-amber-200/20 bg-amber-300/10 px-6 py-3 text-sm font-bold text-amber-200 transition-all duration-300 hover:border-amber-200/40 hover:bg-amber-300/15 hover:text-amber-100"
           >
             <TrendingUp className="h-4 w-4" />
-            Inviter LexiBourse sur votre serveur
+            Inviter Lexi Bourse sur votre serveur
           </a>
 
           {/* Divider */}
@@ -78,7 +78,7 @@ export default function Footer() {
               </a>
             </p>
             <p className="mt-1 text-xs text-slate-600">
-              © {new Date().getFullYear()} LexiBourse — Tous droits réservés.
+              © {new Date().getFullYear()} Lexi Bourse — Tous droits réservés.
               <span className="ml-2">Technologie : Python (discord.py), spaCy, JSON.</span>
             </p>
           </div>

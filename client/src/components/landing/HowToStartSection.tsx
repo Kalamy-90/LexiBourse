@@ -1,5 +1,5 @@
 /**
- * LexiBourse — How To Start Section
+ * Lexi Bourse — How To Start Section
  * Dark Finance Premium: étapes numérotées avec ligne de connexion
  */
 import { motion } from "framer-motion";
@@ -12,7 +12,7 @@ const steps = [
     color: "text-amber-300",
     bg: "bg-amber-300/10 border-amber-300/20",
     title: "Inviter le bot",
-    description: "Cliquez sur le bouton d'invitation et autorisez LexiBourse à rejoindre votre serveur Discord. Assurez-vous de lui donner les permissions nécessaires.",
+    description: "Cliquez sur le bouton d'invitation et autorisez Lexi Bourse à rejoindre votre serveur Discord. Assurez-vous de lui donner les permissions nécessaires.",
   },
   {
     number: "02",
