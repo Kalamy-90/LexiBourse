@@ -1,25 +1,34 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * LexiBourse — Home Page
+ * Dark Finance Premium: assemblage de toutes les sections
  */
-export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+import Header from "@/components/landing/Header";
+import HeroSection from "@/components/landing/HeroSection";
+import FeaturesSection from "@/components/landing/FeaturesSection";
+import CommandsSection from "@/components/landing/CommandsSection";
+import HowToStartSection from "@/components/landing/HowToStartSection";
+import FaqSection from "@/components/landing/FaqSection";
+import AboutSection from "@/components/landing/AboutSection";
+import Footer from "@/components/landing/Footer";
 
+export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
+    <div className="site-shell min-h-screen text-slate-100">
+      {/* Luxury noise overlay */}
+      <div className="luxury-noise" aria-hidden="true" />
+
+      <div className="relative z-10">
+        <Header />
+        <main>
+          <HeroSection />
+          <FeaturesSection />
+          <CommandsSection />
+          <HowToStartSection />
+          <FaqSection />
+          <AboutSection />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
