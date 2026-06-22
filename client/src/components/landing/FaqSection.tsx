@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Le bot fonctionne-t-il sur plusieurs serveurs ?",
-    a: "Oui, chaque serveur a sa propre bourse indépendante avec ses propres mots, joueurs et historique de prix. Les données sont sauvegardées automatiquement toutes les 15 minutes.",
+    a: "Oui, chaque serveur a sa propre bourse indépendante avec ses propres mots, joueurs et historique de prix. Les données sont sauvegardées automatiquement et restent secrètes, aucunes données ne sont revendus ou publiées.",
   },
   {
     q: "Comment rejoindre le serveur de support ?",
