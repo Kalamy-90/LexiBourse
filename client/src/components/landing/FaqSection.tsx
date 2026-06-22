@@ -9,7 +9,7 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     q: "Comment fonctionne le système de prix ?",
-    a: "Le prix d'un mot évolue en temps réel selon les achats et les ventes : chaque achat fait monter le cours, chaque vente le fait baisser. De plus, les prix sont recalculés toutes les heures en fonction de l'utilisation des mots dans le chat. Un mot non utilisé pendant une heure perd automatiquement 5% de sa valeur.",
+    a: "Le prix d'un mot évolue en temps réel selon les achats et les ventes : chaque achat fait monter le cours, chaque vente le fait baisser. De plus, les prix sont recalculés toutes les heures en fonction de l'utilisation des mots dans le chat. Un mot non utilisé pendant une heure perd automatiquement 1% de sa valeur sauf si le serveur est inactif.",
   },
   {
     q: "Comment sont choisis les mots cotés en bourse ?",
