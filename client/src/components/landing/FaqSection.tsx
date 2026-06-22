@@ -31,10 +31,6 @@ const faqs = [
     q: "Le bot fonctionne-t-il sur plusieurs serveurs ?",
     a: "Oui, chaque serveur a sa propre bourse indépendante avec ses propres mots, joueurs et historique de prix. Les données sont sauvegardées automatiquement et restent secrètes, aucunes données ne sont revendus ou publiées.",
   },
-  {
-    q: "Comment rejoindre le serveur de support ?",
-    a: "Vous pouvez rejoindre le serveur Discord officiel de support via le lien dans la section 'À propos'. Vous y trouverez de l'aide, les annonces de mises à jour et la communauté Lexi Bourse.",
-  },
 ];
 
 function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
