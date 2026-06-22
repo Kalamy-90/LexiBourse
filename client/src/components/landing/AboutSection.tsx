@@ -161,7 +161,7 @@ export default function AboutSection() {
                 </p>
                 <div className="grid gap-3">
                   <ContactLink href="https://discord.com/invite/wE6vjjCXW3" icon={MessageCircle}>
-                    Discord Lexi Bourse
+                    Discord Kalamy's Team
                   </ContactLink>
                   <ContactLink href="mailto:kalamys.team@gmail.com" icon={Mail}>
                     kalamys.team@gmail.com
