@@ -22,7 +22,7 @@ const features = [
     bg: "bg-green-400/10 border-green-400/20",
     title: "Marché en Temps Réel",
     description:
-      "Le prix d'un mot change en temps réel selon les achats et les ventes. Il est aussi recalculé chaque heure selon l'utilisation dans le chat. Un mot non utilisé perd 5% par heure.",
+      "Le prix d'un mot change en temps réel selon les achats et les ventes. Il est aussi recalculé chaque heure selon l'utilisation dans le chat. Un mot non utilisé perd 1% par heure sauf si le serveur est inactif.",
   },
   {
     icon: BarChart2,
